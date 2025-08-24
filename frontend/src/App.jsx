@@ -14,7 +14,7 @@ function App() {
 
  const [user,setUser]=useState(null);
  const nav=useNavigate();
- const [isLoad,setIsLoad]=useState(false);
+ const [isLoad,setIsLoad]=useState(true);
 
 
  useEffect(()=>{
@@ -48,7 +48,7 @@ function App() {
     <>
        <Routes>
          
-         <Route path="/dashboard" element={user ? <LeadManagement user={user} /> :null}/>
+         <Route path="/dashboard" element={<LeadManagement user={user} />}/>
      
          <Route path="/" element={<Login setUser={setUser}/>}/>
        
