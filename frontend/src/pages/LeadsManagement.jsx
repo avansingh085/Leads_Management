@@ -81,9 +81,9 @@ const LeadManagement = ({user}) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen w-screen bg-gray-50 p-6">
       <Header user={user}/>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl min-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Lead Management</h1>
@@ -123,6 +123,7 @@ const LeadManagement = ({user}) => {
                 <option value="10">10 per page</option>
                 <option value="20">20 per page</option>
                 <option value="50">50 per page</option>
+                <option value="100">100 per page</option>
               </select>
             </div>
           </div>
