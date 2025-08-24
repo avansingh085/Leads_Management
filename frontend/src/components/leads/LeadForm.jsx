@@ -1,4 +1,4 @@
-// src/components/leads/LeadForm.jsx
+
 import React, { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { leadService } from '../../services/leadService';

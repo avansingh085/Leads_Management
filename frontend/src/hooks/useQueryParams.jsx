@@ -1,4 +1,4 @@
-// src/hooks/useQueryParams.js
+
 import { useSearchParams } from 'react-router-dom';
 
 export const useQueryParams = () => {
@@ -35,8 +35,7 @@ export const useQueryParams = () => {
  
     setSearchParams(params.toString());
   };
-   console.log(Object.fromEntries(searchParams),"QUEUEUUEUEUE")
-  
+   
   return {
     queryParams: searchParams,
     updateQueryParams

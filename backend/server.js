@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from 'cors';
-import dotenv from 'dotenv';
+
 
 import LeadRoutes from './routes/lead.route.js';
 
@@ -11,13 +11,13 @@ import UserRoutes from './routes/user.route.js';
 
 import connectDB from "./config/db.config.js";
 
-dotenv.config();
+import { FRONTEND_URL } from "./config/server.config.js";
 
 const app=express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:process.env.FRONTEND_URL,
+    origin:FRONTEND_URL,
     credentials: true,  
 }))
 connectDB();

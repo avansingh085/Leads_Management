@@ -1,4 +1,4 @@
-// src/components/leads/LeadFilters.jsx
+
 import React, { useState } from 'react';
 
 const LeadFilters = ({ onFilter, initialFilters }) => {

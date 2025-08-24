@@ -1,4 +1,4 @@
-// src/components/leads/LeadList.jsx
+
 import React from 'react';
 import { FaEye, FaEdit, FaTrash, FaUser, FaEnvelope, FaPhone, FaBuilding, FaMapMarkerAlt } from 'react-icons/fa';
 

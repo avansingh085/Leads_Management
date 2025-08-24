@@ -4,6 +4,7 @@ dotenv.config();
 export const {
     MONGO_URI,
     PORT,
-    JWT_SECRET
+    JWT_SECRET,
+    FRONTEND_URL
 
 } = process.env;
