@@ -1,12 +1,45 @@
-# React + Vite
+# Frontend - Lead Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **Frontend** for the Lead Management System built using **React + Vite** and **Tailwind CSS**.  
+It connects to the **Node.js + Express** backend with JWT authentication and cookies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Built with **React (Vite)** for fast development  
+- Styled with **Tailwind CSS**  
+- Axios client configured with backend URL  
+- Authentication flows (Login, Register, Logout)  
+- Secure cookie-based authentication
+- Leads edit delete update create pagination and filters login from server side
+- Responsive UI  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Tech Stack
+- **React (Vite)**
+- **Tailwind CSS**
+- **Axios**
+- **React Router DOM**
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file in the root of your frontend project with the following variable:
+
+```env
+VITE_BACKEND_URL= https://leads-management.onrender.com/api
+
+## Installation
+Clone the repository
+
+git clone https://github.com/avansingh085/Leads_Management.git
+cd frontend
+
+Install dependencies
+npm install
+
+Run the server with Nodemon
+npm run dev
+
