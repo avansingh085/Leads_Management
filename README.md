@@ -31,7 +31,7 @@ Create a `.env` file in the root of your project with the following variables:
 MONGO_URI=your_mongodb_connection_string
 PORT=3000
 JWT_SECRET=your_jwt_secret_key
-FRONTEND_URL=https://st.com
+FRONTEND_URL=https://leads-management-nine.vercel.app/
 
 ## Installation
 Clone the repository
@@ -81,7 +81,7 @@ It connects to the **Node.js + Express** backend with JWT authentication and coo
 Create a `.env` file in the root of your frontend project with the following variable:
 
 ```env
-VITE_BACKEND_URL=http://localhost:3000/api
+VITE_BACKEND_URL= https://leads-management.onrender.com/api
 
 ## Installation
 Clone the repository
