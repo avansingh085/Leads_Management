@@ -31,12 +31,12 @@ Create a `.env` file in the root of your project with the following variables:
 MONGO_URI=your_mongodb_connection_string
 PORT=3000
 JWT_SECRET=your_jwt_secret_key
-FRONTEND_URL=[http://localhost:5173](https://github.com/avansingh085/Leads_Management.git)
+FRONTEND_URL=https://st.com
 
 ## Installation
 Clone the repository
 
-git clone [<repo-url>](https://github.com/avansingh085/Leads_Management.git)
+git clone https://github.com/avansingh085/Leads_Management.git
 cd backend
 
 Install dependencies
@@ -86,12 +86,12 @@ VITE_BACKEND_URL=http://localhost:3000/api
 ## Installation
 Clone the repository
 
-git clone [<repo-url>](https://github.com/avansingh085/Leads_Management.git)
-cd backend
+git clone https://github.com/avansingh085/Leads_Management.git
+cd frontend
 
 Install dependencies
 npm install
 
 Run the server with Nodemon
-npx nodemon
+npm run dev
 
