@@ -9,8 +9,9 @@ import { leadService } from '../services/leadService';
 //import SearchBar from '../components/common/SearchBar';
 import { useLeads } from '../hooks/useLeads';
 import { useQueryParams } from '../hooks/useQueryParams';
+import Header from '../components/common/Header';
 
-const LeadManagement = () => {
+const LeadManagement = ({user}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentLead, setCurrentLead] = useState(null);
   const [modalMode, setModalMode] = useState('create');
@@ -81,6 +82,7 @@ const LeadManagement = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
+      <Header user={user}/>
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaSignInAlt, FaUserPlus, FaEnvelope, FaUserCircle } from 'react-icons/fa';
 import { apiClient } from '../apiClient/api';
-
 const AuthSystem = ({setUser}) => {
   const [isLoginMode, setIsLoginMode] = useState(true);
   const [formData, setFormData] = useState({
