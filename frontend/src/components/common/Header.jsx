@@ -5,8 +5,11 @@ import { apiClient } from "../../apiClient/api";
 export default function Header({
   user = { firstName: "First", lastName: "Last", email: "email@example.com" },
 }) {
+    
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const dropdownRef = useRef(null);
+
   const profileIconRef = useRef(null);
 
   const initials = `${(user.firstName?.[0] || "").toUpperCase()}${(user.lastName?.[0] || "").toUpperCase()}`;
