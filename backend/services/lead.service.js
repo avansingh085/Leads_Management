@@ -35,11 +35,11 @@ class LeadService {
         try {
             const lead = await leadModel.findOne({ id: userId, _id: id });
             if (!lead) {
-                return { data: null, error: "Invalid lead id" };
+                return { lead: null, error: "Invalid lead id" };
             }
-            return { data: lead, error: "" };
+            return {  lead, error: "" };
         } catch (err) {
-            return { data: null, error: err.message || "Error fetching lead" };
+            return { lead: null, error: err.message || "Error fetching lead" };
         }
     }
 
@@ -53,11 +53,11 @@ class LeadService {
             );
 
             if (!updatedData) {
-                return { data: null, error: "Failed to update lead" };
+                return { updatedData: null, updatedError: "Failed to update lead" };
             }
-            return { data: updatedData, error: "" };
+            return {  updatedData, updatedError: "" };
         } catch (err) {
-            return { data: null, error: err.message || "Error updating lead" };
+            return { updatedData: null, updatedError: err.message || "Error updating lead" };
         }
     }
 
@@ -66,11 +66,11 @@ class LeadService {
         try {
             const deletedLead = await leadModel.findOneAndDelete({ id: userId, _id: id });
             if (!deletedLead) {
-                return { data: null, error: "Failed to delete lead" };
+                return { deletedLead: null, error: "Failed to delete lead" };
             }
-            return { data: deletedLead, error: "" };
+            return {  deletedLead, error: "" };
         } catch (err) {
-            return { data: null, error: err.message || "Error deleting lead" };
+            return { deletedLead: null, error: err.message || "Error deleting lead" };
         }
     }
 }

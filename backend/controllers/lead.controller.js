@@ -192,7 +192,6 @@ class LeadController {
     }
 
     return res.status(200).send({
-      success: true,
       data,
       total,
       totalPages,
@@ -250,17 +249,17 @@ class LeadController {
                 return res.status(400).send({ success: false, msg: error });
             }
             // when call service function to upadete return two data error and updatedData
-            const { updatedData = {}, updateError = null } = await LeadService.updateLeadById(req.user.id,id, data);
+            const { updatedData = {}, updatedError = null } = await LeadService.updateLeadById(req.user.id,id, data);
 
             //when get error during update lead then send error message
-            if (updateError) {
-                return res.status(400).send({ success: false, msg: error });
+            if (updatedError) {
+                return res.status(400).send({ success: false, msg: updatedError});
             }
             // when lead updated success fully of given id send responce
             return res.status(200).send(updatedData);
         }
         catch (err) {
-          
+          console.log("error during update lead by id",err)
             // if unknown error occur the send responce with status code 501 error message
             return res.status(501).send({ success: false, msg: "invalid error" });
         }
@@ -277,7 +276,7 @@ class LeadController {
                 return res.status(400).send({ success: false, msg: "invalid id" });
 
             // default error null if get error then assign error ruturn service function
-            const { deletedData = {}, error = null } = await LeadService.deleteById(req.user.id,id);  // delete service function excute
+            const { deletedLead = {}, error = null } = await LeadService.deleteById(req.user.id,id);  // delete service function excute
 
             // if error occure then send 400 responce
             if (error) {
@@ -290,6 +289,7 @@ class LeadController {
         }
         catch (err) {
             // when unknow error 
+            console.log("error during delte lead",err)
             return res.status(500).send({ success: false, msg: "internal server error" });
         }
 
