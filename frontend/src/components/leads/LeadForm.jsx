@@ -96,7 +96,7 @@ const LeadForm = ({ mode, lead, onClose, onSave }) => {
       if (mode === 'create') {
         await leadService.createLead(formData);
       } else if (mode === 'edit') {
-        await leadService.updateLead(lead.id, formData);
+        await leadService.updateLead(lead._id, formData);
       }
       
       onSave();

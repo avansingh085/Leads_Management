@@ -239,18 +239,20 @@ class LeadController {
             // check valide id pass or not
             if (!id)
                 return res.status(400).send({ success: false, msg: "invalid id" });
-
+  
             // validate data come from body they correct formate or not
             const { data = {}, error = null } = validation.validateLeadUpdateBody(req.body);
 
+           
             // when invalid data formate of updated then send error
             if (error) {
 
                 return res.status(400).send({ success: false, msg: error });
             }
             // when call service function to upadete return two data error and updatedData
+            console.log(req.user.id,id)
             const { updatedData = {}, updatedError = null } = await LeadService.updateLeadById(req.user.id,id, data);
-
+  console.log(updatedError,updatedData)
             //when get error during update lead then send error message
             if (updatedError) {
                 return res.status(400).send({ success: false, msg: updatedError});

@@ -1,5 +1,5 @@
 import leadModel from "../schemas/lead.schema.js";
-
+import mongoose from "mongoose";
 class LeadService {
     // Create new lead
     async createLead(data) {
@@ -37,29 +37,40 @@ class LeadService {
             if (!lead) {
                 return { lead: null, error: "Invalid lead id" };
             }
-            return {  lead, error: "" };
+            return { lead, error: "" };
         } catch (err) {
             return { lead: null, error: err.message || "Error fetching lead" };
         }
     }
 
-    // Update lead by id
-    async updateLeadById(userId, id, data) {
-        try {
-            const updatedData = await leadModel.findOneAndUpdate(
-                { id: userId, _id: id },
-                data,
-                { new: true } // return updated document
-            );
+   
+async updateLeadById(userId, leadId, data) {
+  try {
+  
+   
+   delete data._id;
+    delete data.id;
 
-            if (!updatedData) {
-                return { updatedData: null, updatedError: "Failed to update lead" };
-            }
-            return {  updatedData, updatedError: "" };
-        } catch (err) {
-            return { updatedData: null, updatedError: err.message || "Error updating lead" };
-        }
+    const updatedData = await leadModel.findOneAndUpdate(
+      {
+        _id: leadId,
+        id:userId
+      },
+      { $set: data },
+      { new: true }
+    );
+
+    console.log("Updated:", updatedData, "Data:", data, "UserId:", userId, "LeadId:", leadId);
+
+    if (!updatedData) {
+      return { updatedData: null, updatedError: "Failed to update lead (not found or mismatch)" };
     }
+
+    return { updatedData, updatedError: "" };
+  } catch (err) {
+    return { updatedData: null, updatedError: err.message || "Error updating lead" };
+  }
+}
 
     // Delete lead by id
     async deleteById(userId, id) {
@@ -68,7 +79,7 @@ class LeadService {
             if (!deletedLead) {
                 return { deletedLead: null, error: "Failed to delete lead" };
             }
-            return {  deletedLead, error: "" };
+            return { deletedLead, error: "" };
         } catch (err) {
             return { deletedLead: null, error: err.message || "Error deleting lead" };
         }

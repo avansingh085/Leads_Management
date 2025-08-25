@@ -1,13 +1,17 @@
 import { validate } from 'uuid';
 import AuthService from '../services/auth.service.js'
-
+import dotenv from 'dotenv';
+dotenv.config();
 class AuthController {
     async login(req, res) {
         try {
-
+  
             const { email, password } = req.body;
             if (!email || typeof email != "string" || !password || typeof password != "string")
+            {
+               
                 return res.status(401).send({ success: false, msg: "invalid email or password" });
+            }
 
 
 
