@@ -28,6 +28,11 @@ app.use('/api/auth',AuthRoutes);
 
 app.use('/api/user',UserRoutes);
 
+
+app.get('/api',(req,res)=>{
+   return res.status(200).send("server is running")
+})
+
 app.listen(process.env.PORT,()=>{
     console.log("server is running port ",process.env.PORT);
 })
